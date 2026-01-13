@@ -1,54 +1,79 @@
-# Mechanic Inventory Management System
+# 🛠️ Mechanic Inventory Management System (MIMS)
+**A Full-Stack Enterprise Automotive Solution**
 
-## Project Description
-
-The Mechanic Inventory Management System/ Mechanic Tracker is designed to help small and medium-sized automotive repair shops manage their parts inventory more efficiently. Currently, many independent mechanics rely on handwritten notes, spreadsheets, or manual lookups to track which parts are in stock, which customers they belong to, and the vehicles they are associated with. This process can be time-consuming, error-prone, and difficult to maintain as the number of customers and parts grows.  
-
-This system provides a simple yet powerful tool that allows mechanics to store essential information about automotive parts and generate cost reports quickly. Each part will be linked to key details such as its part number, price, quantity, the customer requesting it, and the vehicle it is meant for. By digitizing this process, mechanics can save time, reduce mistakes, and maintain accurate records of parts used for each customer.  
-
-One of the system’s key features will be its **calculation functionality**. When parts are added to a customer’s record, the program will automatically calculate the extended price (`partPrice × partQuantity`) and generate a subtotal. Taxes will then be applied to provide a final bill. Additionally, the system will enable shops to view the **total value of all inventory** on hand, giving a clearer picture of overall stock value. Reports can also be generated to check how many units of a specific part number are available, which will help mechanics restock promptly.  
-
-Ultimately, this system will streamline both **customer billing** and **inventory management**, allowing mechanics to spend less time on paperwork and more time on repairs.  
+Developed for the **CIS2232 - Advanced Object-Oriented Programming** course at Holland College. This project demonstrates a complete software development lifecycle (SDLC) using **Agile Sprints**, **Jira Issue Tracking**, and **Version Control**.
 
 ---
 
-## Color Scheme
-
-**Theme:** Midnight Garage
-
-### Color Palette
-**Main Color:** #000000 (Black) - Primary background  
-**Secondary Color:** #9c9a9a (Grey) - Navigation and secondary elements  
-**Accent Color:** #fcba03 (Yellow) - Buttons, interactive elements, highlights
-
-## Fields
-
-| Field Name   | Data Type | Description                                                                 |
-|--------------|-----------|-----------------------------------------------------------------------------|
-| partNumber   | String    | Unique alpha-numeric ID (e.g., 37280-5BA-C15, max length 15).               |
-| partPrice    | Double    | Price of the part (two decimal points, e.g., 20.12).                        |
-| custName     | String    | Customer’s name in “Firstname, Lastname” format.                           |
-| vehicle      | String    | Vehicle in “Year, Make, Model” format.                                     |
-| partQuantity | Int       | Number of parts available or purchased.                                    |
-| invoiceID    | String    | Unique ID to associate transactions with customers.                        |
-| taxRate      | Double    | Applied tax percentage (e.g., 0.15 for 15%).                               |
-| totalCost    | Double    | Calculated: `(partPrice × partQuantity) + tax`.                            |
+## 👥 Project Team & Roles
+* **Hamza Tariq (Lead Developer):** Full-stack implementation, API architecture, and Database logic.
+* **John Stewart (Business Analyst):** Requirements gathering, color palette, and UAT.
+* **Elizabeth Eagles (Project Manager/QA):** Sprint tracking and milestone validation.
 
 ---
 
-## Calculations
+## 🚀 Advanced Technical Features
 
-### Customer Total
-- `partPrice × partQuantity = Subtotal`  
-- `Subtotal × (1 + taxRate) = Total with Tax`  
-- Breakdown includes subtotal, tax amount, and final total.  
+### 📡 Multi-Protocol API Integration
+The system provides dual-layer connectivity for third-party integrations:
+* **REST API (Jersey):** Full CRUD operations (GET, POST, DELETE) returning JSON responses with standard HTTP status codes.
+* **SOAP Web Service:** A Java-based SOAP service providing contract-based entity retrieval.
+* **Client Implementation:** Developed a client application to consume and test internal services.
 
-### Inventory Value
-- Formula: Sum of `(partPrice × partQuantity)` for all parts in the database.  
+### 💾 Data Persistence & Architecture
+We utilized two distinct data access patterns to demonstrate versatility:
+* **Spring Data JPA:** Used for standard CRUD operations and entity validation.
+* **JDBC & DAO Pattern:** Leveraged for complex financial reporting logic and high-performance data retrieval.
+* **Relational Schema:** Optimized MySQL database using a strict naming convention.
+
+### 📊 Reporting & File I/O
+* **Dynamic Reports:** Real-time financial snapshots filtered by date ranges or Part Numbers.
+* **Physical Logging:** The system generates timestamped `.txt` audit files (e.g., `InventoryReport_20260113.txt`) saved to `C:\cis2232\`.
+
+### 🧪 Quality Assurance
+* **Unit Testing:** JUnit tests implemented to verify the accuracy of the calculation engine.
+* **Business Validation:** Custom logic to prevent future-dated transactions and negative inventory values.
 
 ---
-## Report Details
-1. Provide the current sales value for a given part number. The user enters a Part Number and the report will provide the Total Quantity Sold and the Total Pre-Tax Revenue for that part across all transactions.
 
-2. Provide a summary of all transactions within a date range. The user can enter a Start Date and an End Date and the report will provide a summary list of all invoices (including Invoice ID, Customer Name, and Total Cost) created within that range.
+## 🎨 Theme: "Midnight Garage"
+The UI follows an industrial, high-contrast aesthetic:
+* **Primary:** `#000000` (Stealth Black) 
+* **Secondary:** `#9c9a9a` (Metallic Grey)
+* **Accent:** `#fcba03` (Caution Yellow)
+
+---
+
+## 📅 Development Roadmap (Sprints)
+- **Sprint 1:** Repository setup, Jira integration, and UI implementation.
+- **Sprint 2:** JDBC reporting functionality and File I/O implementation.
+- **Sprint 3:** Spring MVC, JPA implementation, and Spring Validation.
+- **Sprint 4:** REST & SOAP Web Service architecture.
+- **Sprint 5:** Unit Testing, Business Logic refinement, and Finalization.
+
+---
+
+## 🛠️ Tech Stack
+* **Language:** Java 8+
+* **Frameworks:** Spring Boot (MVC, Data JPA), Jersey
+* **Database:** MySQL
+* **Testing:** JUnit
+* **Project Management:** Jira / Bitbucket
+
+---
+
+## ⚙️ Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/HamzaDhillon/MechanicInventoryTracker.git](https://github.com/HamzaDhillon/MechanicInventoryTracker.git)
+
+### UI Preview
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e4c821e-fb19-490d-bea6-9118608cf64b" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/10635caa-2c32-44f8-8c5c-f58d14a38e98" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c764ee16-fc11-47ad-a7ba-87a81b670f22" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70f476fa-fa7c-4770-9f8d-1fb2c1997f53" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2d809ac-3cce-4b3e-83bf-4815e384a8f5" />
+
+
 
