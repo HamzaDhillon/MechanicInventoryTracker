@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+    <title id="pageTitle">Part Sales Report</title>
+</head>
+<body>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+<div class="container has-text-centered">
+    <h2 class="title is-2" th:text="#{label.report.part.invoice.part.number}">Part Sales Value (Part Number)</h2>
+
+    <form th:action="@{/report/invoice/partsales/submit}" method="post" th:object="${reportInput}" class="wbb"
+          style="display:inline-block;text-align:left!important">
+
+        <label>Part Number: </label>
+        <input type="text" th:field="*{partNumber}" required></input>
+        <br></br>
+
+        <button style="display:block;margin-top:24px!important" class="centered">Submit</button>
+    </form>
+    <br></br>
+
+    <p th:if="${not #strings.isEmpty(message)}" th:text="${message}">No data found</p>
+
+
+    <table class="styled-table wbb centered"
+           th:if="${not #lists.isEmpty(reportInput.partInvoices)}"
+           style="padding:0!important;display:inline-block!important">
+
+        <thead>
+        <tr>
+            <th>Part Number</th>
+            <th></th>
+            <th>Total Qty Sold</th>
+            <th></th>
+            <th>Total Revenue (Pre-Tax)</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="current : ${reportInput.partInvoices}">
+            <td th:text="${current.partNumber}"></td>
+            <td></td>
+            <td th:text="${current.partQuantity}"></td>
+            <td></td>
+            <td th:text="${#numbers.formatDecimal(current.totalCost, 1, 2)}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

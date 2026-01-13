@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+    <title id="pageTitle">Transaction Report</title>
+</head>
+<body>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+<div class="container has-text-centered">
+    <h2 class="title is-2" th:text="#{label.report.part.invoice.date.range}">Transaction Summary (Date Range)</h2>
+
+    <form th:action="@{/report/invoice/daterange/submit}" method="post" th:object="${reportInput}" class="wbb"
+          style="display:inline-block;text-align:left!important">
+        <label>Start date: </label>
+        <input type="date" th:field="*{dateStart}"></input>
+        <br></br>
+        <label>End date: </label>
+        <input type="date" th:field="*{dateEnd}"></input>
+        <br></br>
+        <button style="display:block;margin-top:24px!important" class="centered">Submit</button>
+    </form>
+    <br></br>
+
+    <p th:if="${not #strings.isEmpty(message)}" th:text="${message}">No data found</p>
+
+
+    <table class="styled-table wbb centered"
+           th:if="${not #lists.isEmpty(reportInput.partInvoices)}"
+           style="padding:0!important;display:inline-block!important">
+
+        <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th></th>
+            <th>Transaction Date</th>
+            <th></th>
+            <th>Customer Name</th>
+            <th></th>
+            <th>Vehicle</th>
+            <th></th>
+            <th>Part Number</th>
+            <th></th>
+            <th>Part Qty</th>
+            <th></th>
+            <th>Total Cost</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="current : ${reportInput.partInvoices}">
+            <td th:text="${current.invoiceID}"></td>
+            <td></td>
+            <td th:text="${current.transactionDate}"></td>
+            <td></td>
+            <td th:text="${current.custName}"></td>
+            <td></td>
+            <td th:text="${current.vehicle}"></td>
+            <td></td>
+            <td th:text="${current.partNumber}"></td>
+            <td></td>
+            <td th:text="${current.partQuantity}"></td>
+            <td></td>
+            <td th:text="${#numbers.formatDecimal(current.totalCost, 1, 2)}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

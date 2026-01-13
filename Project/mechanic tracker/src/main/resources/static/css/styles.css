@@ -1,0 +1,419 @@
+/* Color Variables */
+:root {
+    --main-color-primary: #fcba03; /* Yellow - Accent */
+    --main-color-dark: #000000; /* Black - Primary */
+    --main-color-secondary: #9c9a9a; /* Grey - Secondary */
+    --main-color-text: #ffffff; /* White text for dark backgrounds */
+    --main-color-text-dark: #000000; /* Dark text for light backgrounds */
+}
+
+/* Enhanced styling improvements */
+
+/* Improve form styling in add.html */
+.container form.wbb {
+    background: #fff !important;
+    padding: 2rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    max-width: 600px;
+    border: 2px solid var(--main-color-secondary);
+}
+
+.container form.wbb p {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container form.wbb label {
+    font-weight: 600;
+    color: var(--main-color-dark) !important;
+    margin-right: 1rem;
+    min-width: 140px;
+}
+
+.container form.wbb input[type="text"],
+.container form.wbb input[type="number"],
+.container form.wbb input[type="date"] {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--main-color-secondary);
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+.container form.wbb input[readonly] {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+/* Improve button styling */
+.btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--main-color-primary);
+    color: var(--main-color-dark);
+    border: 2px solid var(--main-color-dark);
+}
+
+.btn-primary:hover {
+    background: #e0a803;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(252, 186, 3, 0.4);
+}
+
+.btn-secondary {
+    background: var(--main-color-secondary);
+    color: white;
+    border: 2px solid var(--main-color-dark);
+}
+
+.btn-secondary:hover {
+    background: #7a7878;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: var(--main-color-primary);
+    color: var(--main-color-dark);
+    border: 2px solid var(--main-color-dark);
+}
+
+.btn-success:hover {
+    background: #e0a803;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(252, 186, 3, 0.4);
+}
+
+/* Improve table styling in list.html */
+.table-responsive {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 2px solid var(--main-color-secondary);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: var(--main-color-dark) !important;
+    color: var(--main-color-text) !important;
+    padding: 1rem 0.75rem !important;
+    border-bottom: 3px solid var(--main-color-primary) !important;
+    font-weight: 600;
+}
+
+.table tbody td {
+    padding: 0.75rem !important;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--main-color-secondary);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(252, 186, 3, 0.1) !important;
+}
+
+/* Improve button group in table */
+.btn-group .btn {
+    margin: 0 2px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--main-color-primary);
+    color: var(--main-color-dark);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--main-color-primary);
+    border-color: var(--main-color-primary);
+    color: var(--main-color-dark);
+}
+
+.btn-outline-danger {
+    border: 1px solid var(--main-color-secondary);
+    color: var(--main-color-secondary);
+    background: transparent;
+}
+
+.btn-outline-danger:hover {
+    background: var(--main-color-secondary);
+    border-color: var(--main-color-secondary);
+    color: white;
+}
+
+/* Improve search forms */
+.form-inline .input-group {
+    width: 100%;
+}
+
+.form-inline .form-control {
+    border-radius: 6px 0 0 6px;
+    border: 2px solid var(--main-color-secondary);
+    padding: 0.5rem 0.75rem;
+}
+
+.form-inline .btn {
+    border-radius: 0 6px 6px 0;
+    white-space: nowrap;
+}
+
+/* Improve message styling */
+.error, .alert-danger {
+    color: #ffffff !important;
+    background: var(--main-color-secondary) !important;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--main-color-dark);
+}
+
+.success, .alert-success {
+    color: var(--main-color-dark) !important;
+    background: var(--main-color-primary) !important;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--main-color-dark);
+}
+
+/* Improve page titles */
+.title {
+    color: var(--main-color-dark) !important;
+    font-weight: 700;
+    margin-bottom: 2rem !important;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Body background */
+body {
+    background-color: #f5f5f5;
+}
+
+/* Navbar styling */
+.navbar.nav {
+    padding-right: 30px; /* moves content away from right */
+    background: #f5f5f5 !important;
+    border-bottom: 3px solid var(--main-color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-item, .navbar-link {
+    color: var(--main-color-dark) !important;
+    font-weight: 500;
+}
+
+.navbar-item:hover, .navbar-link:hover {
+    background: var(--main-color-primary) !important;
+    color: var(--main-color-dark) !important;
+}
+
+/* Improve navbar dropdowns */
+.navbar-dropdown {
+    background: var(--main-color-secondary) !important;
+    border: 2px solid var(--main-color-dark);
+}
+
+.navbar-dropdown .navbar-item {
+    color: var(--main-color-text) !important;
+}
+
+.navbar-dropdown .navbar-item:hover {
+    background: var(--main-color-primary) !important;
+    color: var(--main-color-dark) !important;
+}
+
+.navbar-divider {
+    background-color: var(--main-color-dark) !important;
+}
+
+/* Footer styling */
+.footer.ftr {
+    background: var(--main-color-dark) !important;
+    color: var(--main-color-text) !important;
+    border-top: 3px solid var(--main-color-primary);
+}
+
+/* DataTables pagination and search styling */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--main-color-primary) !important;
+    color: var(--main-color-dark) !important;
+    border: 1px solid var(--main-color-dark) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--main-color-primary) !important;
+    color: var(--main-color-dark) !important;
+    border: 1px solid var(--main-color-dark) !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 2px solid var(--main-color-secondary);
+    border-radius: 4px;
+}
+
+/* Report tables */
+table.wbb {
+    background: #fff !important;
+    border: 2px solid var(--main-color-secondary) !important;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.wbb th {
+    background: var(--main-color-dark) !important;
+    color: var(--main-color-text) !important;
+    border-bottom: 3px solid var(--main-color-primary) !important;
+}
+
+table.wbb tr:nth-child(even) {
+    background-color: rgba(252, 186, 3, 0.05) !important;
+}
+
+table.wbb tr:hover {
+    background-color: rgba(252, 186, 3, 0.15) !important;
+}
+
+/* Improve responsive behavior */
+@media (max-width: 768px) {
+    .container form.wbb p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container form.wbb label {
+        margin-bottom: 0.5rem;
+    }
+
+    .container form.wbb input {
+        width: 100%;
+    }
+
+    .form-inline .input-group {
+        flex-direction: column;
+    }
+
+    .form-inline .form-control,
+    .form-inline .btn {
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Ensure proper spacing */
+.container {
+    padding-bottom: 2rem;
+}
+
+/* Improve empty state styling */
+.text-muted {
+    color: var(--main-color-secondary) !important;
+    font-style: italic;
+}
+
+/* Enhance focus states for accessibility */
+input:focus,
+button:focus,
+select:focus {
+    outline: 2px solid var(--main-color-primary);
+    outline-offset: 2px;
+    border-color: var(--main-color-primary) !important;
+}
+
+/* Navbar burger for mobile */
+.navbar-burger {
+    color: var(--main-color-text) !important;
+}
+
+.navbar-burger:hover {
+    background-color: var(--main-color-primary) !important;
+}
+
+.navbar-burger span {
+    background-color: var(--main-color-text) !important;
+}
+
+.navbar-burger:hover span {
+    background-color: var(--main-color-dark) !important;
+}
+
+/* Reports table styling */
+.styled-table {
+    border-collapse: separate;
+    border-spacing: 0 8px; /* space between rows */
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.styled-table thead th {
+    background: #f0f0f0;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+}
+
+.styled-table tbody tr {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    transition: 0.2s;
+}
+
+.styled-table tbody tr:hover {
+    background: #f5faff;
+}
+
+.styled-table tbody td {
+    padding: 10px 15px;
+}
+/* About Page Center Formatting */
+.center-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* centers table horizontally */
+    justify-content: center;
+}
+
+/* Only target the add page container */
+.add-page-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: calc(100vh - 200px);
+}
+
+.add-page-container .row.justify-content-center {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.add-page-container .col-md-8.col-lg-6 {
+    margin: 0 auto;
+    float: none;
+}
+/*Styling for list reports diaplay*/
+.wbb {
+    border: 2px solid #ccc;                /* thin border */
+    border-radius: 10px;                    /* optional */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* shadow */
+}

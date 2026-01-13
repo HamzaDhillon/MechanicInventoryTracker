@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+    <title id="pageTitle" th:text="#{label.add.edit}">Add/Edit</title>
+</head>
+<body>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+<div class="container my-4 add-page-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="mb-3 text-center title" th:if="${partInvoice.invoiceID != null and not #strings.isEmpty(partInvoice.invoiceID)}" th:text="#{label.edit.order}">Edit order</h2>
+            <h2 class="mb-3 text-center title" th:if="${partInvoice.invoiceID == null or #strings.isEmpty(partInvoice.invoiceID)}" th:text="#{label.add.order}">Add order</h2>
+
+            <div th:if="${not #strings.isEmpty(messageError)}" class="alert alert-danger text-center">
+                <span th:text="${messageError}">Error message</span>
+            </div>
+            <div th:if="${not #strings.isEmpty(messageSuccess)}" class="alert alert-success text-center">
+                <span th:text="${messageSuccess}">Success message</span>
+            </div>
+
+            <form th:action="@{/partinvoice/submit}" th:object="${partInvoice}" method="post" class="wbb">
+                <input type="hidden" th:field="*{invoiceID}" />
+
+                <div class="mb-3">
+                    <label class="form-label">Invoice ID:</label>
+                    <div>
+                        <strong th:if="*{invoiceID != null and !#strings.isEmpty(invoiceID)}" th:text="*{invoiceID}">INV-001</strong>
+                        <strong th:if="*{invoiceID == null or #strings.isEmpty(invoiceID)}">New (Generated on Submit)</strong>
+                        <small class="text-muted ms-2">(Auto-generated)</small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Customer Name:</label>
+                    <input type="text" th:field="*{custName}" class="form-control" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('custName')}" th:errors="*{custName}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Vehicle:</label>
+                    <input type="text" th:field="*{vehicle}" class="form-control" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Part Number:</label>
+                    <input type="text" th:field="*{partNumber}" class="form-control" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('partNumber')}" th:errors="*{partNumber}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Part Quantity:</label>
+                    <input type="number" th:field="*{partQuantity}" class="form-control" min="1" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('partQuantity')}" th:errors="*{partQuantity}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Part Price:</label>
+                    <input type="number" step="0.01" th:field="*{partPrice}" class="form-control" min="0" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('partPrice')}" th:errors="*{partPrice}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tax Rate (%):</label>
+                    <input type="number" step="0.001" th:field="*{taxRate}" class="form-control" min="0" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('taxRate')}" th:errors="*{taxRate}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Total Cost:</label>
+                    <input type="number" step="0.01" th:field="*{totalCost}" readonly class="form-control bg-light" />
+                    <div class="text-danger" th:if="${#fields.hasErrors('totalCost')}" th:errors="*{totalCost}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Transaction Date:</label>
+                    <input type="date" th:field="*{transactionDate}" class="form-control" required />
+                    <div class="text-danger" th:if="${#fields.hasErrors('transactionDate')}" th:errors="*{transactionDate}"></div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span th:text="#{label.submit}">Submit</span>
+                    </button>
+                </div>
+
+                <div class="text-center mt-2">
+                    <a th:href="@{/partinvoice}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const quantityInput = document.querySelector('input[name="partQuantity"]');
+        const priceInput = document.querySelector('input[name="partPrice"]');
+        const taxInput = document.querySelector('input[name="taxRate"]');
+        const totalInput = document.querySelector('input[name="totalCost"]');
+
+        function calculateTotal() {
+            const quantity = parseFloat(quantityInput?.value) || 0;
+            const price = parseFloat(priceInput?.value) || 0;
+            const taxRate = parseFloat(taxInput?.value) || 0;
+
+            const subtotal = price * quantity;
+            const taxAmount = subtotal * (taxRate / 100);
+            const total = subtotal + taxAmount;
+
+            if (totalInput) {
+                totalInput.value = total.toFixed(2);
+            }
+        }
+
+        if (quantityInput && priceInput && taxInput && totalInput) {
+            quantityInput.addEventListener('input', calculateTotal);
+            priceInput.addEventListener('input', calculateTotal);
+            taxInput.addEventListener('input', calculateTotal);
+
+            // Calculate initial total
+            calculateTotal();
+        }
+    });
+</script>
+</body>
+</html>
