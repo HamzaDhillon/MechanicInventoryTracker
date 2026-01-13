@@ -69,11 +69,13 @@ The UI follows an industrial, high-contrast aesthetic:
 
 ### UI Preview
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e4c821e-fb19-490d-bea6-9118608cf64b" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/10635caa-2c32-44f8-8c5c-f58d14a38e98" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c764ee16-fc11-47ad-a7ba-87a81b670f22" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70f476fa-fa7c-4770-9f8d-1fb2c1997f53" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2d809ac-3cce-4b3e-83bf-4815e384a8f5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/742c121f-7e06-40d2-8436-746c1f6aaa42" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d5b7a31-e261-42b5-8d90-87b26a8286a1" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/053fc72c-92aa-4bf0-bcdc-04b5e415676f" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3d133717-3187-4bb6-857e-b2cb156108ba" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5c125d5c-2829-4d3c-88c7-7d72f6c82ae1" />
+
+
 
 
 
