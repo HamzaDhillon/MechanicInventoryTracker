@@ -1,8 +1,8 @@
 # Mechanic Inventory Management System
----
+
 ## Project Description
 
-The **Mechanic Inventory Management System/ Mechanic Tracker ** is designed to help small and medium-sized automotive repair shops manage their parts inventory more efficiently. Currently, many independent mechanics rely on handwritten notes, spreadsheets, or manual lookups to track which parts are in stock, which customers they belong to, and the vehicles they are associated with. This process can be time-consuming, error-prone, and difficult to maintain as the number of customers and parts grows.  
+The Mechanic Inventory Management System/ Mechanic Tracker is designed to help small and medium-sized automotive repair shops manage their parts inventory more efficiently. Currently, many independent mechanics rely on handwritten notes, spreadsheets, or manual lookups to track which parts are in stock, which customers they belong to, and the vehicles they are associated with. This process can be time-consuming, error-prone, and difficult to maintain as the number of customers and parts grows.  
 
 This system provides a simple yet powerful tool that allows mechanics to store essential information about automotive parts and generate cost reports quickly. Each part will be linked to key details such as its part number, price, quantity, the customer requesting it, and the vehicle it is meant for. By digitizing this process, mechanics can save time, reduce mistakes, and maintain accurate records of parts used for each customer.  
 
@@ -17,11 +17,10 @@ Ultimately, this system will streamline both **customer billing** and **inventor
 **Theme:** Midnight Garage
 
 ### Color Palette
+**Main Color:** #000000 (Black) - Primary background  
+**Secondary Color:** #9c9a9a (Grey) - Navigation and secondary elements  
+**Accent Color:** #fcba03 (Yellow) - Buttons, interactive elements, highlights
 
--- **Main Color:** #000000 (Black) - Primary background  
--- **Secondary Color:** #9c9a9a (Grey) - Navigation and secondary elements  
--- **Accent Color:** #fcba03 (Yellow) - Buttons, interactive elements, highlights
----
 ## Fields
 
 | Field Name   | Data Type | Description                                                                 |
